@@ -14,3 +14,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+"""
+class Author(models.Model):
+    name = models.CharField(max_length=200)
+    bio = models.TextField()
+"""
