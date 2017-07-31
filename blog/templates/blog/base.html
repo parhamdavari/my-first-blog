@@ -40,11 +40,20 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
-      <h4>My blog</h4>
+      {% if user.is_authenticated %}
+        <h4>Hello <b>{{ user.username }}</b> <small>(<a href="{% url 'logout' %}">Log out</a>)</small></h4>
+      {% else %}
+          <h4>My blog</h4>
+      {% endif %}
+
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="{% url 'home'%}">Home</a></li>
         {% if user.is_authenticated %}
             <li><a href="{% url 'post_new' %}">Add Post</a></li>
+            <li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
+            <!--<li><a href="{% url 'logout' %}">Logout</a></li>-->
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
         {% endif %}
         <!--- <li><a href="#section2">Friends</a></li> -->
         <!-- a href="#section3">Photos</a></li> -->
