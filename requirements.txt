@@ -2,7 +2,7 @@ certifi==2017.4.17
 chardet==3.0.4
 click==6.7
 clickclick==1.2.2
-Django==1.10.7
+Django==1.11.28
 fastavro==0.14.5
 idna==2.5
 inflection==0.3.1
